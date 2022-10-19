@@ -1,0 +1,23 @@
+:root {
+  --cell-size: 50px;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-container .cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid black;
+}
+
+
+.grid-container .cell.odd {
+  background-color: #c4f025;
+}
+
+.grid-container .cell.even {
+  background-color: #8694ee;
+}

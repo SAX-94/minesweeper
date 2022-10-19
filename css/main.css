@@ -1,0 +1,142 @@
+/* 
+windows 98 css
+https://jdan.github.io/98.css/
+*/
+
+:root {
+  --border-width: 3px;
+  --space: 16px;
+  --cell-size: 30px;
+  --inset-shadow: inset -3px -3px #fff, inset 3px 3px grey,
+    inset -3px -3px #dfdfdf, inset 3px 3px #0a0a0a;
+}
+
+body {
+  background-color: #d8d8d8;
+}
+
+.playing-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-color: #fff #7a787b #7a787b #fff;
+  border-width: var(--border-width);
+  border-style: solid;
+  padding: var(--space);
+}
+
+.points-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space);
+  margin-bottom: var(--space);
+  box-shadow: var(--inset-shadow);
+  padding: 16px;
+}
+
+.points-container__points,
+.points-container__time {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.points-container__points--value,
+.points-container__time--value {
+  background-color: black;
+  display: inline-block;
+  height: 40px;
+  font-family: "digital-7", monospace;
+  color: red;
+  font-size: 3rem;
+  line-height: 3rem;
+  padding-top: 4px; /* for alligning vertically the text */
+  padding-left: 4px;
+  padding-right: 4px;
+  display: flex;
+  padding-top: 4px;
+  align-items: center;
+}
+
+.grid-container {
+  display: none;
+  flex-wrap: wrap;
+  /* width: calc(var(--cell-size) * 8 + (var(--border-width) * 2)); */
+  /* height: calc(var(--cell-size) * 8 + (var(--border-width) * 2)); */
+  box-shadow: var(--inset-shadow);
+  padding: var(--border-width);
+  position: relative;
+}
+
+.grid-container.easy {
+  width: calc(var(--cell-size) * 10 + (var(--border-width) * 2));
+  height: calc(var(--cell-size) * 10 + (var(--border-width) * 2));
+}
+
+.grid-container.medium {
+  width: calc(var(--cell-size) * 9 + (var(--border-width) * 2));
+  height: calc(var(--cell-size) * 9 + (var(--border-width) * 2));
+}
+
+.grid-container.hard {
+  width: calc(var(--cell-size) * 7 + (var(--border-width) * 2));
+  height: calc(var(--cell-size) * 7 + (var(--border-width) * 2));
+}
+
+.grid-container:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* width: 20px; */
+  /* height: 20px; */
+  /* background: red; */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+.grid-container.explode:after {
+  display: block;
+  opacity: 1;
+  animation: explosion 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: #bdc1c2;
+  border-color: #fff #7a787b #7a787b #fff;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.cell.clicked {
+  background-color: #b4b4b7;
+  border-color: #838386;
+  border-style: dashed;
+}
+
+.cell.bomb {
+  background-image: url("../images/bomb.png");
+  background-position: center;
+  background-size: calc(var(--cell-size) * 0.6);
+  background-repeat: no-repeat;
+}
+
+.cell.bomb:not(.unveil) {
+  background-color: #ff0000;
+}
+
+.cell.flag {
+  /* background-color: #f6ff00; */
+  background-image: url("../images/flag.png");
+  background-position: center;
+  background-size: calc(var(--cell-size) * 0.4);
+  background-repeat: no-repeat;
+}

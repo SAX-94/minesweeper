@@ -1,0 +1,27 @@
+:root {
+  --explosion-primary-color: #980b0b;
+}
+
+@keyframes explosion {
+  from {
+    box-shadow: 0 0 20px var(--explosion-primary-color),
+      0 0 40px var(--explosion-primary-color),
+      0 0 60px var(--explosion-primary-color),
+      0 0 80px var(--explosion-primary-color),
+      0 0 120px var(--explosion-primary-color),
+      0 0 220px var(--explosion-primary-color),
+      0 0 320px var(--explosion-primary-color);
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 30px 30px rgb(224, 83, 83), 0 0 60px 60px rgb(224, 83, 83),
+      0 0 100px 100px rgb(224, 168, 83), 0 0 120px 120px rgb(226, 82, 82),
+      0 0 200px 200px rgb(214, 37, 37), 0 0 400px 400px rgb(165, 105, 27),
+      0 0 450px 450px rgb(235, 63, 63);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

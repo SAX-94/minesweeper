@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css'
+        integrity='sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==' crossorigin='anonymous' />
+
+  <link rel="stylesheet" href="css/font-digital-7.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center">
+        <h1 class="pt-3 pb-5">Campo Minato</h1>
+
+        <div class="points-container ms-auto">
+          <select name="difficultyLevel" class="form-select">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+
+          <button class="btn btn-outline-primary btn-sm text-nowrap" id="btn-new-game">Nuova partita</button>
+        </div>
+      </div>
+
+
+      <div class="playing-board">
+        <div class="points-container">
+          <div class="points-container__time">
+            <span class="points-container__time--text">Tempo:</span>
+            <span class="points-container__time--value" id="time">000</span>
+          </div>
+
+          <div class="points-container__points ms-5">
+            <span class="points-container__points--text">Punti:</span>
+            <span class="points-container__points--value" id="points">000</span>
+          </div>
+        </div>
+
+
+        <div class="grid-container"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- <script src="js/utilities.js"></script> -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
